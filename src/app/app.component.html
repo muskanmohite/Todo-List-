@@ -1,0 +1,54 @@
+<br>
+ 
+ <div class="container-fluid">
+  <div class="row  justify-content-center
+          align-items-center" style="height:80px; background-color: rgb(51, 66, 204);">
+      <div class="col-3"></div>
+      <div class="text-light h2" style="text-align: center;" >
+           TODO-LIST
+      </div>
+  </div>
+  <br>
+  <div class="row mt-1" style="height:80px;">
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+      <div class="col-12 col-md-6  d-flex 
+                  justify-content-center align-items-center 
+                  text-light h3" style=" background-color: rgb(128, 139, 231);">
+
+          <input [(ngModel)]="newTask" type="text" 
+                  value="" class="col-7 form-control"
+                      style="width:300px;">
+
+          <div class="col-1"></div>
+
+          <button (click)="addToList()" 
+              class="btn btn-light text-success">
+              ADD TASK
+          </button>
+      </div>
+
+  </div>
+
+  <div *ngFor="let x of items; let index = index;" 
+          class="row mt-1" style="height:70px;">
+
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+
+      <div class="col-12 col-md-6  d-flex
+                  justify-content-center align-items-center
+                  text-light h3" style=" background-color: rgb(128, 139, 231);">
+
+
+          <div class="col-4 text-light h3">{{x}}</div>
+
+          <input  type="button" (click)=addItem() value="Edit" id="edit"
+          class="col-2 btn btn-primary">
+        
+          <input (click)="deleteTask(index)" type="button"
+              value="Delete" class="col-2 btn btn-danger">
+          
+      </div>
+        
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+</div>
