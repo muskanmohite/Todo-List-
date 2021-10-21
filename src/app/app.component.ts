@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public items = ['cofee','tea',];
+  public items = ['coffee','tea',];
   
   public newTask!: "";
 
@@ -26,7 +26,15 @@ export class AppComponent {
   }
 
    addItem(){
-       this.items.reverse
+    if (this.newTask == '') {
+      
+    }
+    else {
+        this.items.push(this.newTask);
+       
+        
+    }
+    
       }
 
       
